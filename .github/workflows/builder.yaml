@@ -57,6 +57,8 @@ jobs:
             echo "No add-on had any monitored files changed (${{ env.MONITORED_FILES }})";
           fi
   build:
+    permissions:
+      packages: write
     needs: init
     runs-on: ubuntu-latest
     if: needs.init.outputs.changed == 'true'
