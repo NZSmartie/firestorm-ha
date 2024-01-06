@@ -1,7 +1,7 @@
 name: Pixelblaze Firestorm
 description: >-
  Pixelblaze Firestorm is a centralized control console for Pixelblaze WiFi LED controllers.
-version: "0.1.0"
+version: "0.1.1"
 slug: "firestorm"
 url: https://github.com/simap/Firestorm
 
@@ -15,4 +15,5 @@ init: false
 startup: services
 panel_icon: "mdi:led-strip"
 ingress: true
+ingress_port: 0
 host_network: true

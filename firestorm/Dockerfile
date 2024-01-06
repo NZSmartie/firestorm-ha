@@ -10,11 +10,10 @@ WORKDIR /app
 
 RUN git clone https://github.com/simap/Firestorm .
 
-COPY no-repl.patch /app
-RUN git apply no-repl.patch && rm no-repl.patch
+COPY no-repl.patch run.sh /app/
+RUN chmod a+x run.sh && git apply no-repl.patch && rm no-repl.patch
 
 RUN yarn && yarn build
 
-ENV PORT=8099
-CMD ["yarn","server"]
+CMD ["/app/run.sh"]
 
