@@ -1,0 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: Pixelblaze Firestorm add-on repository
+url: 'https://github.com/NZSmartie/firestorm-ha'
+maintainer: NZSmartie <github@nzsmartie.co.nz>
