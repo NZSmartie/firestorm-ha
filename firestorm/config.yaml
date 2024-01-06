@@ -5,6 +5,7 @@ version: "0.1.1"
 slug: "firestorm"
 url: https://github.com/simap/Firestorm
 
+image: "nzsmartie/ha-{arch}-firestorm"
 arch:
   - armhf
   - armv7
