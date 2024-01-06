@@ -1,0 +1,44 @@
+diff --git a/package.json b/package.json
+index b388ad2..826ed90 100644
+--- a/package.json
++++ b/package.json
+@@ -3,6 +3,7 @@
+   "version": "0.1.0",
+   "private": true,
+   "proxy": "http://localhost:3001/",
++  "homepage": "./",
+   "dependencies": {
+     "archiver": "^5.0.2",
+     "body-parser": "^1.19.0",
+diff --git a/server.js b/server.js
+index d7879b3..c46c9e9 100644
+--- a/server.js
++++ b/server.js
+@@ -21,14 +21,5 @@ app.use(compression())
+ app.use(express.static('build'));
+ 
+ console.log('listening on %s', PORT)
+ app.listen(PORT)
+-
+-
+-const r = repl.start('> ');
+-r.on('exit', () => {
+-  console.log('Received "exit" event from repl!');
+-  process.exit();
+-});
+-r.context.discoveries = discovery.discoveries;
+-r.context.reqire = require;
+ 
+diff --git a/src/App.js b/src/App.js
+index 71a37c4..102c26d 100644
+--- a/src/App.js
++++ b/src/App.js
+@@ -191,7 +191,7 @@ class App extends Component {
+ 
+   handleReload = async (event) => {
+     event.preventDefault();
+-    await fetch("/reload", {method:"POST"});
++    await fetch("./reload", {method:"POST"});
+     //hasten a poll
+     if (this.interval)
+       clearTimeout((this.interval));
