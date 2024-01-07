@@ -16,4 +16,3 @@ RUN chmod a+x run.sh && git apply no-repl.patch && rm no-repl.patch
 RUN yarn && yarn build
 
 CMD ["/app/run.sh"]
-
